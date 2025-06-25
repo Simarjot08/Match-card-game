@@ -11,6 +11,7 @@ body{
     min-height:100vh;
     background:#6563ff;
     flex-direction: column;
+
     
 }
 h1{
@@ -71,27 +72,32 @@ cursor:pointer;
     color:#6563ff;
     font-size:40px;
 }
-.card:hover  .front-view{ 
-  transform:rotateY(-180deg);
+.cards.flip{
+     transition:transform 0.2s ease;
+}
+.card.flip.front-view{ 
+  transform:rotateY(180deg);
 }
 
-.card:hover .back-view{
+.card.flip .back-view{
     
   transform:rotateY(0deg);
 }
 .shake{
     animation:shake 0.35s ease-in-out;
 }
-
-.card .flip  .front-view{
-    
-  transform:rotateY(-180deg);
+.wrapper{
+    animation:animate;
+    animation-duration:1s;
 }
 
-.card .flip .back-view{
+@keyframes animate{
+    0%,100%{
+         background-color: rgb(218, 229, 249);
+    }
     
-  transform:rotateY(0deg);
 }
+
 
 
 @keyframes shake{
@@ -125,6 +131,12 @@ cursor:pointer;
     height:22%;
     width:22%;
    }
+}
+
+#res{
+    visibility:hidden;
+    height:500px;
+    width:500px;
 }
 
 
